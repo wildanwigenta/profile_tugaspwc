@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function sendToWhatsApp() {
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var message = document.getElementById("message").value;
+
+            var whatsappNumber = "6281377243047";  
+            var url = "https://wa.me/" + whatsappNumber + "?text=" 
+                      + "Nama: " + name + "%0A"
+                      + "Alamat: " + address + "%0A"
+                      + "Pesan: " + message;
+
+            window.open(url, '_blank').focus();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome!!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li class="active"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+    <h2>Contact</h2>
+    <hr>
+        <form onsubmit="sendToWhatsApp();">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="address">Address:</label>
+            <input type="address" id="address" name="address" required>
+            <label for="message">message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div id="statusMessage"></div>
+    </div>
+    <footer>
+        <p>&copy; 2024 wildanluqman.</p>
+    </footer>
+</body>
+</html>
